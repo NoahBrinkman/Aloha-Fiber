@@ -13,7 +13,7 @@ public class Question : MonoBehaviour
         correctAnswerPrompt = string.Empty, 
         incorrectAnswerPrompt = String.Empty;
 
-    public bool lockQuestion = false;
+    [HideInInspector] public bool lockQuestion = false;
 
     private void OnEnable()
     {
