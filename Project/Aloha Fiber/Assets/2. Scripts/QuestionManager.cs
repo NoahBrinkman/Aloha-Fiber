@@ -21,7 +21,7 @@ public class QuestionManager : MonoBehaviour
     {
         if(questions.All(x => x.completed))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
             return;
         }
         if((currentIndex + 1) >= questions.Count) return;
