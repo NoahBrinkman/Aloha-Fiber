@@ -1910,7 +1910,6 @@ GameObject:
   - component: {fileID: 766841608}
   - component: {fileID: 766841611}
   - component: {fileID: 766841610}
-  - component: {fileID: 766841609}
   m_Layer: 5
   m_Name: Windrichting text
   m_TagString: Untagged
@@ -1937,21 +1936,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100.35507, y: -157.7776}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &766841609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766841607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &766841610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3095,7 +3079,6 @@ GameObject:
   - component: {fileID: 1413506045}
   - component: {fileID: 1413506048}
   - component: {fileID: 1413506047}
-  - component: {fileID: 1413506046}
   m_Layer: 5
   m_Name: Windrichting text
   m_TagString: Untagged
@@ -3122,21 +3105,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100.35495, y: -157.77753}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1413506046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413506044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &1413506047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3993,7 +3961,6 @@ GameObject:
   - component: {fileID: 1761900896}
   - component: {fileID: 1761900899}
   - component: {fileID: 1761900898}
-  - component: {fileID: 1761900897}
   m_Layer: 5
   m_Name: Windrichting text
   m_TagString: Untagged
@@ -4020,21 +3987,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100.35495, y: -157.7774}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1761900897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761900895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &1761900898
 MonoBehaviour:
   m_ObjectHideFlags: 0
