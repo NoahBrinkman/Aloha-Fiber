@@ -7,20 +7,29 @@ using UnityEngine.SceneManagement;
 
 public class QuestionManager : MonoBehaviour
 {
+    [SerializeField] private int CorrectAnswerPointReward = 100;
     [SerializeField] private List<Question> questions = new List<Question>();
     public int QuestionTotal => questions.Count;
     private int currentIndex = 0;
     public int CurrentIndex => currentIndex;
+    private ScoreManager scoreManager = null;
+    
     private void OnEnable()
     {
         questions.ForEach(x => x.gameObject.SetActive(false));
         questions[0].gameObject.SetActive(true);
     }
 
+    private void Awake()
+    {
+        scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
+    }
+
     public void NextQuestion()
     {
         if(questions.All(x => x.completed))
         {
+            //add timer points
             SceneManager.LoadScene(2);
             return;
         }
@@ -41,5 +50,10 @@ public class QuestionManager : MonoBehaviour
             Application.Quit();
             #endif
         }
+    }
+
+    public void AddPointsForCorrectAnswer()
+    {
+        scoreManager.currentProfile.score += CorrectAnswerPointReward;
     }
 }

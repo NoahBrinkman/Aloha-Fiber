@@ -26,6 +26,7 @@ public class StartButton : MonoBehaviour
             Profile newProfile = new Profile();
             newProfile.name = nameInput.text;
             newProfile.score = 0;
+            scoreManager.currentProfile = newProfile;
             scoreManager.scoreboard.Add(newProfile);
         }
         SceneManager.LoadScene(1);

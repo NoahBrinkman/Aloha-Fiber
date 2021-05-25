@@ -26,6 +26,7 @@ public class Question : MonoBehaviour
         
         completed = true;
         lockQuestion = true;
+        questionmanager.AddPointsForCorrectAnswer();
         StartCoroutine(ShowPromptBeforeReset(correctAnswerPrompt, 5));
 
     }
@@ -33,7 +34,7 @@ public class Question : MonoBehaviour
     public void IncorrectAnswerChosen()
     {
         if(lockQuestion) return;
-        
+        completed = true;
         StartCoroutine(ShowPromptBeforeReset(incorrectAnswerPrompt, 5));
     }
     
