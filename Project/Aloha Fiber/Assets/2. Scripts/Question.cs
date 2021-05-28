@@ -4,8 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum QuestionCatagories{ 
+RoutePlanning,
+AlarmHerkenning,
+IcoonHerkenning,
+Overig
+}
+
+
 public class Question : MonoBehaviour
 {
+    public QuestionCatagories catagory = QuestionCatagories.Overig;
+    
     [SerializeField] private QuestionManager questionmanager = null;
     public bool completed = false;
     [SerializeField] private Text promptText = null;

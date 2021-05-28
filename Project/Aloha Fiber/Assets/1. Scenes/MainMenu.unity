@@ -474,7 +474,7 @@ MonoBehaviour:
   currentProfile:
     name: 
     score: 0
-  maxScore: 750
+  maxScore: 1200
 --- !u!1 &932528118
 GameObject:
   m_ObjectHideFlags: 0

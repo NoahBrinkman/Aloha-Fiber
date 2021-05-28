@@ -17,4 +17,10 @@ public class Answer : MonoBehaviour
         if(correctAnswer) button.onClick.AddListener(question.CorrectAnswerChosen);
         else button.onClick.AddListener(question.IncorrectAnswerChosen);
     }
+
+    private void OnValidate()
+    {
+        if (correctAnswer) transform.name = "CorrectAnswer";
+        else transform.name = "IncorrectAnswer";
+    }
 }
