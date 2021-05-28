@@ -470,30 +470,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909159256f0205040820e091df2512da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreboard:
-  - name: Noah Brinkman
-    score: 600
-  - name: Jacob Bennet
-    score: 120
-  - name: Sean Connery
-    score: 140
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  - name: Noah Ten Brink
-    score: 230
-  maxScore: 600
+  scoreboard: []
+  currentProfile:
+    name: 
+    score: 0
+  maxScore: 750
 --- !u!1 &932528118
 GameObject:
   m_ObjectHideFlags: 0

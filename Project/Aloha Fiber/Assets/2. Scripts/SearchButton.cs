@@ -11,11 +11,18 @@ public class SearchButton : MonoBehaviour
 {
     [SerializeField] private TMP_InputField searchField = null;
     [SerializeField] private TMP_Text searchResultText = null;
+    private Button button = null;
     private ScoreManager scoreManager = null;
     private void OnEnable()
     {
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
-        GetComponent<Button>().onClick.AddListener(DisplaySearchResult);
+        button = GetComponent<Button>();
+        button.onClick.AddListener(DisplaySearchResult);
+    }
+
+    private void Update()
+    {
+        button.interactable = !(searchField.text == String.Empty);
     }
 
     private void DisplaySearchResult()

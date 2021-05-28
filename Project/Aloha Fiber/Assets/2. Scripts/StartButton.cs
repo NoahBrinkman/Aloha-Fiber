@@ -11,14 +11,19 @@ public class StartButton : MonoBehaviour
 {
     [SerializeField] private TMP_InputField nameInput = null;
     private ScoreManager scoreManager = null;
+    private Button button = null;
     private void OnEnable()
     {
-        GetComponent<Button>().onClick.AddListener(OnClicked);
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnClicked);
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
     }
 
-    
-    
+    private void Update()
+    {
+        button.interactable = !(nameInput.text == String.Empty);
+    }
+
     private void OnClicked()
     {
         if (nameInput.text != string.Empty)
