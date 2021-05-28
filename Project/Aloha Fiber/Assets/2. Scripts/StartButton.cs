@@ -30,7 +30,15 @@ public class StartButton : MonoBehaviour
         {
             Profile newProfile = new Profile();
             newProfile.name = nameInput.text;
-            newProfile.score = 0;
+            newProfile.scores = new List<Score>();
+            foreach (QuestionCatagories catagory in Enum.GetValues(typeof(QuestionCatagories)))
+            {
+                Score newScore = new Score();
+                newScore.catagory = catagory;
+                newScore.scoreAmount = 0;
+                newProfile.scores.Add(newScore);
+            }
+            
             scoreManager.currentProfile = newProfile;
             scoreManager.scoreboard.Add(newProfile);
         }

@@ -16,6 +16,6 @@ public class PlayerResult : MonoBehaviour
         
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         if (scoreManager.currentProfile.name == String.Empty) text.text = defaultInput;
-        else text.text = $"#{scoreManager.scoreboard.IndexOf(scoreManager.currentProfile) + 1} {scoreManager.currentProfile.name} - {scoreManager.currentProfile.score}/{scoreManager.maxScore}";
+        else text.text = $"#{scoreManager.scoreboard.IndexOf(scoreManager.currentProfile) + 1} {scoreManager.currentProfile.name} - {scoreManager.currentProfile.scoreSum}/{scoreManager.maxScore}";
     }
 }

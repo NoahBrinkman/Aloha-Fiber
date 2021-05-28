@@ -20,10 +20,10 @@ public class ScoreBoard : MonoBehaviour
             {
                 if (i == 0)
                     text.text =
-                        $"{text.text}#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].score}/{scoreManager.maxScore}";
+                        $"{text.text}#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].scoreSum}/{scoreManager.maxScore}";
                 else
                     text.text =
-                        $"{text.text}\n#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].score}/{scoreManager.maxScore}";
+                        $"{text.text}\n#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].scoreSum}/{scoreManager.maxScore}";
             }
         }
         else
@@ -32,10 +32,10 @@ public class ScoreBoard : MonoBehaviour
             {
                 if (i == 0)
                     text.text =
-                        $"{text.text}#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].score}/{scoreManager.maxScore}";
+                        $"{text.text}#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].scoreSum}/{scoreManager.maxScore}";
                 else
                     text.text =
-                        $"{text.text}\n#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].score}/{scoreManager.maxScore}";
+                        $"{text.text}\n#{i + 1} {scoreManager.scoreboard[i].name} - {scoreManager.scoreboard[i].scoreSum}/{scoreManager.maxScore}";
             } 
         }
     }
