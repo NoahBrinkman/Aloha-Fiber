@@ -14,7 +14,10 @@ public class Profile
 public class ScoreManager : MonoBehaviour
 {
     public List<Profile> scoreboard = new List<Profile>();
-
+    public Profile currentProfile = null;
+    public int maxScore = 600;
+    
+    
     private void OnEnable()
     {
         DontDestroyOnLoad(gameObject);
@@ -27,4 +30,10 @@ public class ScoreManager : MonoBehaviour
             scoreboard = scoreboard.OrderByDescending(o=>o.score).ToList();
         }
     }
+
+    public void SortScores()
+    {
+        scoreboard = scoreboard.OrderByDescending(x => x.score).ToList();
+    }
+    
 }

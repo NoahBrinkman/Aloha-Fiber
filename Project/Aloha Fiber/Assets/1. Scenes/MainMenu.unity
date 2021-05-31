@@ -470,7 +470,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909159256f0205040820e091df2512da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreboard: []
+  scoreboard:
+  - name: James Cook
+    score: 431
+  - name: Mary Sue
+    score: 764
+  - name: John Smith
+    score: 1027
+  - name: Jennifer Marigold
+    score: 942
+  - name: Michael String
+    score: 380
+  - name: Linda Jones
+    score: 623
+  - name: William Brown
+    score: 98
+  - name: Susan Patel
+    score: 648
+  - name: Charles Thompson
+    score: 436
+  - name: Anthony Jackson
+    score: 79
+  - name: Kenneth Turner
+    score: 979
+  - name: Carol Cooper
+    score: 172
+  - name: Georfe Clarke
+    score: 1143
+  - name: Joshua hall
+    score: 1198
+  currentProfile:
+    name: 
+    score: 0
+  maxScore: 1200
 --- !u!1 &932528118
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,8 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum QuestionCatagories{ 
+RoutePlanning,
+AlarmHerkenning,
+IcoonHerkenning,
+Overig
+}
+
+
 public class Question : MonoBehaviour
 {
+    public QuestionCatagories catagory = QuestionCatagories.Overig;
+    
     [SerializeField] private QuestionManager questionmanager = null;
     public bool completed = false;
     [SerializeField] private Text promptText = null;
@@ -26,6 +36,7 @@ public class Question : MonoBehaviour
         
         completed = true;
         lockQuestion = true;
+        questionmanager.AddPointsForCorrectAnswer();
         StartCoroutine(ShowPromptBeforeReset(correctAnswerPrompt, 5));
 
     }
@@ -33,7 +44,7 @@ public class Question : MonoBehaviour
     public void IncorrectAnswerChosen()
     {
         if(lockQuestion) return;
-        
+        completed = true;
         StartCoroutine(ShowPromptBeforeReset(incorrectAnswerPrompt, 5));
     }
     
