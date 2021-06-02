@@ -32,11 +32,26 @@ public class SearchButton : MonoBehaviour
         for (int i = 0; i < searchresults.Count; i++)
         {
             if (i == 0)
+            {
                 searchResultText.text =
-                    $"#{scoreManager.scoreboard.IndexOf(searchresults[i]) + 1} {searchResultText.text}{searchresults[i].name} - {searchresults[i].score}/{scoreManager.maxScore}";
+                    $"#{scoreManager.scoreboard.IndexOf(searchresults[i]) + 1} {searchResultText.text}{searchresults[i].name} - {searchresults[i].scoreSum}/{scoreManager.maxScore}";
+                for (int j = 0; j < searchresults[i].scores.Count; j++)
+                {
+
+                    searchResultText.text =
+                        $"{searchResultText.text}\n<size=9>{searchresults[i].scores[j].catagory} - {searchresults[i].scores[j].scoreAmount}</size>";
+                }
+            }
             else
+            {
                 searchResultText.text =
-                    $"{searchResultText.text}\n#{scoreManager.scoreboard.IndexOf(searchresults[i]) + 1} {searchresults[i].name} - {searchresults[i].score}/{scoreManager.maxScore}";
+                    $"{searchResultText.text}\n#{scoreManager.scoreboard.IndexOf(searchresults[i]) + 1} {searchresults[i].name} - {searchresults[i].scoreSum}/{scoreManager.maxScore}";
+                for (int j = 0; j < searchresults[i].scores.Count; j++)
+                {
+                    searchResultText.text =
+                        $"{searchResultText.text}\n<size=9>{searchresults[i].scores[j].catagory} - {searchresults[i].scores[j].scoreAmount}</size>";
+                }
+            }
         }
     }
     

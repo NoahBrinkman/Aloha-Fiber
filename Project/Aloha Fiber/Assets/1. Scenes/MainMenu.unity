@@ -501,7 +501,7 @@ MonoBehaviour:
     score: 1198
   currentProfile:
     name: 
-    score: 0
+    scores: []
   maxScore: 1200
 --- !u!1 &932528118
 GameObject:

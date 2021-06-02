@@ -35,7 +35,7 @@ public class QuestionManager : MonoBehaviour
             //add timer points
             if (timer >= 0)
             {
-                scoreManager.currentProfile.score += Mathf.RoundToInt(timer);
+                scoreManager.currentProfile.scores[scoreManager.currentProfile.scores.FindIndex(x => x.catagory == QuestionCatagories.Overig)].scoreAmount += Mathf.RoundToInt(timer);
             }
             SceneManager.LoadScene(2);
             return;
@@ -62,6 +62,6 @@ public class QuestionManager : MonoBehaviour
 
     public void AddPointsForCorrectAnswer()
     {
-        scoreManager.currentProfile.score += correctAnswerPointReward;
+        scoreManager.currentProfile.scores[scoreManager.currentProfile.scores.FindIndex(x => x.catagory == questions[currentIndex].catagory)].scoreAmount += correctAnswerPointReward;
     }
 }

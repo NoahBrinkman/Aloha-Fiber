@@ -8,7 +8,15 @@ using UnityEngine;
 public class Profile
 {
     public string name = String.Empty;
-    public int score = 0;
+    public List<Score> scores = new List<Score>();
+    public int scoreSum => scores.Sum(s => s.scoreAmount);
+}
+
+[Serializable]
+public class Score
+{
+    public int scoreAmount = 0;
+    public QuestionCatagories catagory = QuestionCatagories.Overig;
 }
 
 public class ScoreManager : MonoBehaviour
@@ -22,18 +30,10 @@ public class ScoreManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            scoreboard = scoreboard.OrderByDescending(o=>o.score).ToList();
-        }
-    }
-
+    
     public void SortScores()
     {
-        scoreboard = scoreboard.OrderByDescending(x => x.score).ToList();
+        scoreboard = scoreboard.OrderByDescending(x => x.scoreSum).ToList();
     }
     
 }
