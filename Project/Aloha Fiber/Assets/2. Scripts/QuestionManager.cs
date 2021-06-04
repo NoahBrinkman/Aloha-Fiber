@@ -8,10 +8,12 @@ using UnityEngine.SceneManagement;
 public class QuestionManager : MonoBehaviour
 {
     [SerializeField] private int correctAnswerPointReward = 100;
-    [SerializeField] private List<Question> questions = new List<Question>();
+    [SerializeField] private List<GamePrompt> prompts = new List<GamePrompt>();
     [SerializeField] private float timePoints = 300;
     private float timer = 0;
-    public int QuestionTotal => questions.Count;
+    public int QuestionTotal => prompts.Where(p => p.catagory != QuestionCatagories.Overig).ToList().Count;
+    private int questionIndex = 0;
+    public int QuestionIndex => questionIndex;
     private int currentIndex = 0;
     public int CurrentIndex => currentIndex;
     private ScoreManager scoreManager = null;
@@ -19,8 +21,8 @@ public class QuestionManager : MonoBehaviour
     private void OnEnable()
     {
         timer = timePoints;
-        questions.ForEach(x => x.gameObject.SetActive(false));
-        questions[0].gameObject.SetActive(true);
+        prompts.ForEach(x => x.gameObject.SetActive(false));
+        prompts[0].gameObject.SetActive(true);
     }
 
     private void Awake()
@@ -30,7 +32,7 @@ public class QuestionManager : MonoBehaviour
 
     public void NextQuestion()
     {
-        if(questions.All(x => x.completed))
+        if(prompts.All(x => x.completed))
         {
             //add timer points
             if (timer >= 0)
@@ -40,11 +42,12 @@ public class QuestionManager : MonoBehaviour
             SceneManager.LoadScene(2);
             return;
         }
-        if((currentIndex + 1) >= questions.Count) return;
+        if((currentIndex + 1) >= prompts.Count) return;
         
-        questions[currentIndex].gameObject.SetActive(false);
+        prompts[currentIndex].gameObject.SetActive(false);
         currentIndex++;
-        questions[currentIndex].gameObject.SetActive(true);
+        if (prompts[currentIndex].catagory != QuestionCatagories.Overig) questionIndex++;
+        prompts[currentIndex].gameObject.SetActive(true);
     }
 
     private void Update()
@@ -54,7 +57,7 @@ public class QuestionManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
-        if (!questions[currentIndex].lockQuestion && timer > 0)
+        if (!prompts[currentIndex].isLocked && timer > 0)
         {
             timer -= Time.deltaTime;
         }
@@ -62,6 +65,6 @@ public class QuestionManager : MonoBehaviour
 
     public void AddPointsForCorrectAnswer()
     {
-        scoreManager.currentProfile.scores[scoreManager.currentProfile.scores.FindIndex(x => x.catagory == questions[currentIndex].catagory)].scoreAmount += correctAnswerPointReward;
+        scoreManager.currentProfile.scores[scoreManager.currentProfile.scores.FindIndex(x => x.catagory == prompts[currentIndex].catagory)].scoreAmount += correctAnswerPointReward;
     }
 }

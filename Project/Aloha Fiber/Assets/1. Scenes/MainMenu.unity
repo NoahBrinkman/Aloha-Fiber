@@ -470,10 +470,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909159256f0205040820e091df2512da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreboard: []
+  scoreboard:
+  - name: htrdfg
+    scores:
+    - scoreAmount: 1000
+      catagory: 0
+    - scoreAmount: 3
+      catagory: 1
+    - scoreAmount: 100
+      catagory: 2
+    - scoreAmount: 50
+      catagory: 3
   currentProfile:
     name: 
-    scores: []
+    scores:
+    - scoreAmount: 1000
+      catagory: 0
+    - scoreAmount: 0
+      catagory: 1
+    - scoreAmount: 100
+      catagory: 2
+    - scoreAmount: 200
+      catagory: 3
   maxScore: 1200
 --- !u!1 &932528118
 GameObject:

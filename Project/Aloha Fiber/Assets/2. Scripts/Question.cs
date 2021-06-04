@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,30 +13,28 @@ Overig
 }
 
 
-public class Question : MonoBehaviour
+public class Question : GamePrompt
 {
-    public QuestionCatagories catagory = QuestionCatagories.Overig;
-    
     [SerializeField] private QuestionManager questionmanager = null;
-    public bool completed = false;
-    [SerializeField] private Text promptText = null;
+    [SerializeField] private TMP_Text promptText = null;
     [SerializeField, TextArea] private string question = string.Empty, 
         correctAnswerPrompt = string.Empty, 
         incorrectAnswerPrompt = String.Empty;
 
-    [HideInInspector] public bool lockQuestion = false;
+    [SerializeField] private List<GameObject> promptObjects = new List<GameObject>();
 
     private void OnEnable()
     {
         promptText.text = question;
+        promptObjects.ForEach(o => o.SetActive(false));
     }
 
     public void CorrectAnswerChosen()
     {
-        if(lockQuestion) return;
+        if(isLocked) return;
         
         completed = true;
-        lockQuestion = true;
+        isLocked = true;
         questionmanager.AddPointsForCorrectAnswer();
         StartCoroutine(ShowPromptBeforeReset(correctAnswerPrompt, 5));
 
@@ -43,15 +42,16 @@ public class Question : MonoBehaviour
 
     public void IncorrectAnswerChosen()
     {
-        if(lockQuestion) return;
+        if(isLocked) return;
         completed = true;
         StartCoroutine(ShowPromptBeforeReset(incorrectAnswerPrompt, 5));
     }
     
     IEnumerator ShowPromptBeforeReset(string _promptText, float _time)
     {
-        lockQuestion = true;
+        isLocked = true;
         promptText.text = _promptText;
+        promptObjects.ForEach(o => o.SetActive(true));
         yield return new WaitForSeconds(_time);
         promptText.text = question;
         if (completed)
@@ -59,7 +59,7 @@ public class Question : MonoBehaviour
             questionmanager.NextQuestion();
         }
 
-        lockQuestion = false;
+        isLocked = false;
     }
     
 }
