@@ -16,12 +16,17 @@ public class DigitalHelperPrompt : GamePrompt
     {
         textGraphic.onClick.RemoveAllListeners();
         textGraphic.onClick.AddListener(NextSlide);
+        promptText.text = textPrompts[index];
         isLocked = true;
     }
 
     private void NextSlide()
     {
-        if ((index + 1) >= textPrompts.Count) Complete();
+        if ((index + 1) >= textPrompts.Count)
+        {
+            Complete();
+            return;
+        }
         index++;
         promptText.text = textPrompts[index];
 
