@@ -931,12 +931,21 @@ MonoBehaviour:
   questionManager: {fileID: 2039844256}
   promptText: {fileID: 58093783}
   textPrompts:
-  - Gefeliciteerd! Dat was de laatste vraag. Hierna zal je het scorebord zien met
-    jou eigen score.
-  - ' Als je wilt weten hoe je de score opgebroken kunt vinden, dan kan je gewoon
-    je naam opzoeken in de zoekbalk aan de rechterkant van je scherm.'
-  - Bedankt voor het spelen!
+  - text: 'Gefeliciteerd! je bent klaar met de toets. Straks gaan we door naar het
+      resultaat scherm. '
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
+  - text: "Hier kan je je score bekijken maar ook het score bord. \r\nOp dit scorebord
+      staan de top 10 scores van het spel. Sta je dr niet tussen? Dan kan je het
+      altijd nog een keer proberen! "
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
+  - text: 'Wil je weten wat je goed hebt gedaan en wat er beter kan? '
+    face: {fileID: 7882484879712234847, guid: 0c45ee8edb4c52b48baee76e1785a963, type: 3}
+  - text: Zoek je naam dan op in de zoekbalk aan de rechter kant.
+    face: {fileID: -6212400246438208035, guid: 0c45ee8edb4c52b48baee76e1785a963, type: 3}
+  - text: Bedankt voor het spelen!
+    face: {fileID: 5065179273474589525, guid: 8aa55ea5b07982b4eb348457d478364e, type: 3}
   textGraphic: {fileID: 1893883931}
+  face: {fileID: 2065036838}
 --- !u!1 &114370955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,7 +3793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -34.200745, y: 60.71871}
+  m_AnchoredPosition: {x: -34.200806, y: 60.71871}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390737586
@@ -9492,22 +9501,28 @@ MonoBehaviour:
   questionManager: {fileID: 2039844256}
   promptText: {fileID: 1105233044}
   textPrompts:
-  - Hallo! Ik ben Professor Chemical en ik ben uw Digitale Assistent om u te helpen
-    met deze toets.
-  - "Straks krijgt u meerdere vragen te zien over verschillende catagorie\xEBn."
-  - 'Waaronder: Routeplanning en icoon herkenning.'
-  - Maar eerst zal ik uitleggen hoe je score wordt berekent. Voor elk goed beantwoorde
-    vraag krijg je een aantal punten. Maar dit is niet de enige manier om punten
-    te verdienen
-  - De tijd die je spendeert om vragen te beantwoorden word ook mee genomen, dus
-    wees snel!
-  - We gaan het nu hebben over routeplanning. Als er een calamiteit gebeurd, dan
-    moet je vaak zo snel mogelijk een schuilplek vinden, Deze schuilplekken staan
-    groen op je kaart.
-  - Je moet gebaseerd op jou positie op deze kaart en de windrichting bepalen waar
-    je heen moet om gassen te vermijden.
-  - Veel plezier!
+  - text: Hallo en welkom! Mijn naam is Professor Chemical, ik ben uw digitale assistent
+      tijdens deze toets!
+    face: {fileID: -7159795162485335632, guid: 434999d8b3675b5428a1fe6da8e5f7f3, type: 3}
+  - text: Vandaag gaan we je leren hoe je verschillende veiligheidsmaatregelen moet
+      volgen bij Aloha Fiber.
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
+  - text: "We gaan door meerdere catagoriee\xEBn. De eerste hiervan is routeplanning!"
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
+  - text: 'Je zult straks zelf moeten bepalen welke schuilplek het beste voor je
+      is. Hierbij moet je rekening houden met: de wind, de locatie van de calamiteit
+      en je eigen locatie.'
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
+  - text: 'Maar maak je geen zorgen. Dit staat allemaal voor je klaar!
+
+      Je
+      krijgt punten voor elk goed beantwoorde vraag, maar ook voor hoe lang je over
+      de vraag doet dus je moet wel snel wesen.'
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
+  - text: Veel plezier en veel geluk!
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
   textGraphic: {fileID: 1563634601}
+  face: {fileID: 932529804}
 --- !u!1 &1086780855
 GameObject:
   m_ObjectHideFlags: 0
@@ -16430,12 +16445,20 @@ MonoBehaviour:
   questionManager: {fileID: 2039844256}
   promptText: {fileID: 2090280999}
   textPrompts:
-  - 'Gefeliciteerd! u heeft het onderdeel: Routeplanning voldaan. '
-  - Nu gaan we door naar icoonherkenning. Ik zal je een aantal iconen laten zien
-    en je zult opties krijgen om de iconen te beschrijven.
-  - 'Probeer de correcte beschrijving aan te klikken. '
-  - Veel plezier!
+  - text: Geweldig gedaan! je bent nu officieel klaar met het onderdeel routeplannen.
+      Nu gaan we door naar icoon herkenning.
+    face: {fileID: -2728704962193377160, guid: 8aa55ea5b07982b4eb348457d478364e, type: 3}
+  - text: Je zult straks een plaatje te zien krijgen en  je kunt tussen 4 verschillende
+      antwoorden kiezen.
+    face: {fileID: 3180409660863083225, guid: 8aa55ea5b07982b4eb348457d478364e, type: 3}
+  - text: 'Kies het correcte antwoord in een zo kort mogelijke tijd.
+
+'
+    face: {fileID: -3068575931797270883, guid: 8aa55ea5b07982b4eb348457d478364e, type: 3}
+  - text: Veel plezier!
+    face: {fileID: 21300000, guid: fc58ed5ae57c9a94090636177ac266e2, type: 3}
   textGraphic: {fileID: 1917247573}
+  face: {fileID: 1416634555}
 --- !u!1 &1957715322
 GameObject:
   m_ObjectHideFlags: 0
@@ -17081,6 +17104,7 @@ MonoBehaviour:
   - {fileID: 410706585}
   - {fileID: 417205479}
   - {fileID: 1356268161}
+  - {fileID: 110999251}
   timePoints: 200
 --- !u!1 &2043691181
 GameObject:
