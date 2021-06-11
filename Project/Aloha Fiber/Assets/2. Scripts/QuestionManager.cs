@@ -11,11 +11,9 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<GamePrompt> prompts = new List<GamePrompt>();
     [SerializeField] private float timePoints = 300;
     private float timer = 0;
-    public int QuestionTotal => prompts.Where(p => p.catagory != QuestionCatagories.Overig).ToList().Count;
-    private int questionIndex = 0;
-    public int QuestionIndex => questionIndex;
     private int currentIndex = 0;
     public int CurrentIndex => currentIndex;
+    public int QuestionsTotal => prompts.Count;
     private ScoreManager scoreManager = null;
     
     private void OnEnable()
@@ -46,7 +44,6 @@ public class QuestionManager : MonoBehaviour
         
         prompts[currentIndex].gameObject.SetActive(false);
         currentIndex++;
-        if (prompts[currentIndex].catagory != QuestionCatagories.Overig) questionIndex++;
         prompts[currentIndex].gameObject.SetActive(true);
     }
 

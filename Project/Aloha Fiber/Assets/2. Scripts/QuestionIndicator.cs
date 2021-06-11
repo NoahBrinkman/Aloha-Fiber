@@ -18,6 +18,6 @@ public class QuestionIndicator : MonoBehaviour
 
     private void Update()
     {
-        text.text = $"Vraag: {questionManager.QuestionIndex + 1}/{questionManager.QuestionTotal}";
+        text.text = $"Vraag: {questionManager.CurrentIndex + 1}/{questionManager.QuestionsTotal}";
     }
 }
