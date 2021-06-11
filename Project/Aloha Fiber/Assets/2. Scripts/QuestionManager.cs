@@ -13,7 +13,9 @@ public class QuestionManager : MonoBehaviour
     private float timer = 0;
     private int currentIndex = 0;
     public int CurrentIndex => currentIndex;
-    public int QuestionsTotal => prompts.Count;
+    private int questionsIndex = 0;
+    public int QuestionsIndex => questionsIndex;
+    public int QuestionsTotal => prompts.Where(q => q.catagory != QuestionCatagories.Overig).ToList().Count;
     private ScoreManager scoreManager = null;
     
     private void OnEnable()
@@ -43,6 +45,7 @@ public class QuestionManager : MonoBehaviour
         if((currentIndex + 1) >= prompts.Count) return;
         
         prompts[currentIndex].gameObject.SetActive(false);
+        if (prompts[currentIndex].catagory != QuestionCatagories.Overig) questionsIndex++;
         currentIndex++;
         prompts[currentIndex].gameObject.SetActive(true);
     }
